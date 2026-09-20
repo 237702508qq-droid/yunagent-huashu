@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>P6 · 越用越懂你</title>
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: #FBFDFF; }
+  .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: .26; }
+  .page-kicker, .page-footer { color: #7B96B8; }
+  .page-kicker .kicker-brand { color: var(--blue); }
+  .rule-top { background: rgba(79,163,227,.35); }
+
+  .card { position: absolute; width: 816px; height: 178px; background: #FFFFFF; border: 1px solid #CFE2F4; }
+  .p1 { left: 120px; top: 472px; } .p2 { left: 984px; top: 472px; }
+  .p3 { left: 120px; top: 662px; } .p4 { left: 984px; top: 662px; }
+  .card .idx { position: absolute; left: 40px; top: 0; font-size: 76px; font-weight: 900; color: var(--blue-pale); letter-spacing: 0; }
+  .card .nm { position: absolute; left: 148px; top: 36px; font-size: 30px; font-weight: 900; color: var(--navy); letter-spacing: .1em; }
+  .card .nm-en { position: absolute; left: 148px; top: 78px; font-size: 15px; color: #7B96B8; letter-spacing: .2em; }
+  .card .tx { position: absolute; left: 148px; right: 40px; top: 106px; }
+  .card .tx p { margin: 0; font-size: 22px; color: #44608A; line-height: 1.5; }
+  .card .tick { position: absolute; left: 40px; top: 44px; width: 84px; height: 4px; background: var(--gold); }
+
+  .mech { position: absolute; left: 120px; right: 120px; top: 812px; height: 74px; background: var(--navy); }
+  .mech p { margin: 0; position: absolute; left: 44px; top: 21px; color: #F4F9FF; font-size: 24px; letter-spacing: .05em; }
+  .mech b { color: var(--gold); font-weight: 900; }
+  .mech .lock { position: absolute; right: 44px; top: 23px; width: 28px; height: 28px; background: transparent; border: 3px solid var(--gold); border-radius: 14px; }
+
+  .evo { position: absolute; left: 120px; right: 120px; top: 916px; height: 68px; background: #F2F7FC; border: 1px solid #CFE2F4; }
+  .evo .from { position: absolute; left: 60px; top: 17px; }
+  .evo .from p { margin: 0; font-size: 26px; color: #8AA2BE; letter-spacing: .1em; }
+  .evo .arr { position: absolute; left: 480px; top: 24px; width: 0; height: 0; border-left: 26px solid var(--blue);
+    border-top: 15px solid transparent; border-bottom: 15px solid transparent; }
+  .evo .to { position: absolute; left: 560px; top: 13px; }
+  .evo .to p { margin: 0; font-size: 30px; color: var(--navy); font-weight: 900; letter-spacing: .1em; }
+  .evo .to span { color: var(--blue); }
+</style>
+</head>
+<body>
+  <img class="bg" src="../assets/learning.png" alt="">
+  <div class="page-kicker"><span class="kicker-brand">CLOUD AGENT MEMORY</span><span class="kicker-sec">解决方案 · 03</span></div>
+  <div class="rule-top"></div>
+
+  <div class="h-group">
+    <p class="h-num">06 / SOLUTION</p>
+    <h2 class="h-title">越用越懂你——工作习惯的持续学习</h2>
+    <p class="h-sub">桌面记忆持续沉淀，生成四类「工作画像」，个人上下文随使用不断丰富</p>
+  </div>
+
+  <div class="card p1">
+    <p class="idx">01</p><div class="tick"></div>
+    <p class="nm">人际图谱</p><p class="nm-en">NETWORK</p>
+    <div class="tx"><p>谁给你发过什么、你和谁的协作最多——「昨天张三」一问即达</p></div>
+  </div>
+  <div class="card p2">
+    <p class="idx">02</p><div class="tick"></div>
+    <p class="nm">文档习惯</p><p class="nm-en">STYLE</p>
+    <div class="tx"><p>PPT 结构偏好、周报格式、命名规范——「按我 usual 的格式」直接兑现</p></div>
+  </div>
+  <div class="card p3">
+    <p class="idx">03</p><div class="tick"></div>
+    <p class="nm">工作边界</p><p class="nm-en">SCOPE</p>
+    <div class="tx"><p>岗位职责关键词、常用系统与工具——回答不再出圈、不再抽卡</p></div>
+  </div>
+  <div class="card p4">
+    <p class="idx">04</p><div class="tick"></div>
+    <p class="nm">时间规律</p><p class="nm-en">RHYTHM</p>
+    <div class="tx"><p>周一开周会、周五交周报——主动提醒与预生成，先你一步</p></div>
+  </div>
+
+  <div class="mech">
+    <p>关键机制：全部在<b>云桌面本地</b>处理，记忆只服务这一个用户</p>
+    <div class="lock"></div>
+  </div>
+
+  <div class="evo">
+    <div class="from"><p>通用助手</p></div>
+    <div class="arr"></div>
+    <div class="to"><p>懂你的<span>数字同事</span></p></div>
+  </div>
+
+  <div class="page-footer"><span class="f-brand">云桌面 AI AGENT 记忆增强方案</span><span>06 / 10</span></div>
+</body>
+</html>
