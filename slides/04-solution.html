@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>P4 · 我们的解决方案</title>
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: #FBFDFF; }
+  .arch-bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: .34; }
+  .page-kicker, .page-footer { color: #7B96B8; }
+  .page-kicker .kicker-brand { color: var(--blue); }
+  .rule-top { background: rgba(79,163,227,.35); }
+
+  .arch-wrap { position: absolute; left: 120px; right: 120px; top: 466px; }
+  .arch-row { position: relative; height: 150px; margin-bottom: 12px; }
+  .arch-card {
+    position: absolute; left: 0; top: 0; width: 1128px; height: 144px;
+    background: #FFFFFF; border: 2px solid #B9D6EE;
+  }
+  .arch-card .ac-tag {
+    position: absolute; left: 0; top: 0; width: 176px; height: 144px; background: var(--navy);
+  }
+  .arch-card .ac-tag p {
+    margin: 0; position: absolute; left: 0; right: 0; top: 56px;
+    text-align: center; color: #FFFFFF; font-size: 30px; font-weight: 700; letter-spacing: .22em; margin: 0;
+  }
+  .arch-card .ac-tag p { margin: 0; }
+  .arch-card .ac-tag .ac-cn {
+    top: 36px;
+  }
+  .arch-card .ac-tag .en {
+    top: 86px; font-size: 15px; letter-spacing: .18em; color: var(--blue-soft); font-weight: 400;
+  }
+  .arch-card .ac-body { position: absolute; left: 214px; top: 0; width: 880px; height: 144px; }
+  .arch-card .ac-body h3 {
+    margin: 20px 0 0 0; font-size: 29px; color: var(--navy); font-weight: 900; letter-spacing: .04em;
+  }
+  .arch-card .ac-body p { margin: 10px 0 0 0; font-size: 22px; color: #44608A; line-height: 1.5; letter-spacing: .01em; }
+  .arch-card.l2 { left: 96px; }
+  .arch-card.l3 { left: 192px; }
+  .arch-arrow { position: absolute; right: 118px; top: 55px; width: 0; height: 0;
+    border-left: 26px solid var(--blue); border-top: 17px solid transparent; border-bottom: 17px solid transparent; }
+  .arch-stem { position: absolute; right: 140px; top: 70px; width: 0; height: 0; }
+
+  .sum-title { position: absolute; left: 120px; top: 952px; font-size: 24px; font-weight: 700; color: var(--blue); letter-spacing: .2em; }
+  .sum-row { position: absolute; left: 320px; right: 120px; top: 950px; display: flex; }
+  .sum-item { display: flex; align-items: baseline; }
+  .sum-item .no { font-size: 22px; font-weight: 900; color: var(--gold); margin-right: 10px; }
+  .sum-item p { margin: 0; font-size: 22px; color: #44608A; letter-spacing: .02em; }
+  .sum-sep { width: 1px; height: 22px; background: #B9D6EE; margin: 0 24px; }
+</style>
+</head>
+<body>
+  <img class="arch-bg" src="../assets/architecture.png" alt="">
+  <div class="page-kicker"><span class="kicker-brand">CLOUD AGENT MEMORY</span><span class="kicker-sec">解决方案 · 01</span></div>
+  <div class="rule-top"></div>
+
+  <div class="h-group">
+    <p class="h-num">04 / SOLUTION</p>
+    <h2 class="h-title">我们的解决方案：给 Agent 装上「桌面情景记忆」</h2>
+    <p class="h-sub">在 VDI 桌面内启用桌面记忆 · 操作信息以数据库形式滚动记录 · 三层协同</p>
+  </div>
+
+  <div class="arch-wrap">
+    <div class="arch-row">
+      <div class="arch-card l3">
+        <div class="ac-tag"><p class="ac-cn">增强层</p><p class="en">AUGMENT</p></div>
+        <div class="ac-body">
+          <h3>Agent 调用记忆，模糊指令自动补全「5W」</h3>
+          <p>谁、何时、什么文件、什么格式、什么目标——指令缺失的语境由记忆补齐</p>
+        </div>
+        <div class="arch-arrow"></div>
+      </div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-card l2">
+        <div class="ac-tag"><p class="ac-cn">记忆层</p><p class="en">MEMORY</p></div>
+        <div class="ac-body">
+          <h3>本地构建「工作上下文」</h3>
+          <p>文件往来 · 沟通对象 · 文档习惯 · 应用使用图谱；一方面供 Agent 直接调用形成桌面记忆，另一方面由模型整理为「个人上下文」</p>
+        </div>
+        <div class="arch-arrow"></div>
+      </div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-card l1">
+        <div class="ac-tag"><p class="ac-cn">采集层</p><p class="en">COLLECT</p></div>
+        <div class="ac-body">
+          <h3>VDI 桌面内启用桌面记忆，滚动记录操作信息</h3>
+          <p>不录屏、不截全屏，敏感内容哈希脱敏——安静采集，用户无感</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="sum-title">三句话读懂</p>
+  <div class="sum-row">
+    <div class="sum-item"><span class="no">01</span><p>用户照常用云桌面，记忆层安静记录工作轨迹</p></div>
+    <div class="sum-sep"></div>
+    <div class="sum-item"><span class="no">02</span><p>模糊指令进来，记忆层自动补全缺失语境</p></div>
+    <div class="sum-sep"></div>
+    <div class="sum-item"><span class="no">03</span><p>Agent 输出贴合岗位与习惯的结果</p></div>
+  </div>
+
+  <div class="page-footer"><span class="f-brand">云桌面 AI AGENT 记忆增强方案</span><span>04 / 10</span></div>
+</body>
+</html>
