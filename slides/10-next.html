@@ -9,12 +9,15 @@
   .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
   .shade { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: rgba(8, 26, 50, .35); }
   .page-kicker, .page-footer { color: var(--blue-soft); }
+  .page-kicker.kl { right: auto; width: 900px; justify-content: flex-start; }
+  .page-kicker.kr { left: auto; width: 640px; justify-content: flex-end; }
   .page-kicker .kicker-brand { color: var(--blue); }
 
   .h-group { top: 168px; }
   .h-dark .h-num { color: var(--blue-soft); }
   .h-dark .h-title { color: #F7FBFF; font-size: 72px; }
   .h-dark .h-sub { color: var(--blue-soft); }
+  .h-dark .h-sub { padding-left: 33px; }
 
   .step { position: absolute; top: 496px; width: 512px; height: 244px; background: rgba(255, 255, 255, .07); border: 1px solid rgba(143, 191, 232, .4); }
   .s1 { left: 120px; } .s2 { left: 704px; } .s3 { left: 1288px; }
@@ -40,7 +43,8 @@
 <body>
   <img class="bg" src="../assets/finale.png" alt="">
   <div class="shade"></div>
-  <div class="page-kicker"><span class="kicker-brand">CLOUD AGENT MEMORY</span><span class="kicker-sec">NEXT STEP</span></div>
+  <div class="page-kicker kl"><span class="kicker-brand">CLOUD AGENT MEMORY</span></div>
+  <div class="page-kicker kr"><span class="kicker-sec">NEXT STEP</span></div>
 
   <div class="h-group h-dark">
     <p class="h-num">10 / ACTION</p>
