@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <title>云桌面 AI Agent 记忆增强方案</title>
 <style>
+/* 云桌面 AI Agent 记忆增强方案 · 共享设计 token（商务深蓝）
+   约定：色板/字号/页眉页脚 chrome 全局唯一来源；每页 <style> 只放本页布局。
+   字体全部使用本机 Noto CJK（衬线标题 / 黑体正文），无 webfont 依赖。
+   渐变、发光类视觉全部由 PIL 配图承担（转换器不捕获 CSS 渐变）。 */
+
 :root {
   --navy: #0B2545;          /* 主深蓝 */
   --navy-deep: #081A32;     /* 更深底 */
@@ -16,7 +21,52 @@
   --serif: "Noto Serif CJK SC", serif;
   --sans: "Noto Sans CJK SC", sans-serif;
 }
-/* deck-all：页面纵向排列，供 PPTX 管线/打印使用 */
+
+/* 画布锁定 */
+html, body { margin: 0; padding: 0; }
+body {
+  width: 1920px; height: 1080px;
+  font-family: var(--sans);
+  position: relative; overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── 每页通用 chrome ─────────────────────────────────────── */
+.page-kicker {
+  position: absolute; top: 64px; left: 120px; right: 120px;
+  display: flex; align-items: baseline; justify-content: space-between;
+  font-size: 22px; letter-spacing: .35em; color: var(--blue-soft);
+}
+.page-kicker .kicker-brand { font-weight: 700; color: var(--blue); letter-spacing: .30em; }
+.page-kicker .kicker-sec { font-weight: 500; }
+
+.rule-top { position: absolute; top: 116px; left: 120px; right: 120px; height: 2px; background: rgba(79,163,227,.45); }
+
+.page-footer {
+  position: absolute; bottom: 44px; left: 120px; right: 120px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 20px; color: var(--blue-soft); letter-spacing: .12em;
+}
+.page-footer .f-brand { font-weight: 700; letter-spacing: .30em; }
+
+/* 内容页标题组（白底页） */
+.h-group { position: absolute; top: 150px; left: 120px; right: 120px; }
+.h-num {
+  font-family: var(--sans); font-weight: 900; font-size: 30px; color: var(--blue);
+  letter-spacing: .18em;
+}
+.h-title {
+  font-family: var(--serif); font-weight: 900; font-size: 66px; color: var(--navy);
+  margin-top: 10px; letter-spacing: .02em; line-height: 1.22;
+}
+.h-sub { font-size: 26px; color: #4A6285; margin-top: 0; padding-top: 12px; letter-spacing: .06em; }
+
+/* 深色页标题组（封面/结尾） */
+.h-dark .h-num { color: var(--blue-soft); }
+.h-dark .h-title { color: #F4F9FF; }
+.h-dark .h-sub { color: var(--blue-soft); }
+
+/* deck-all 覆盖：页面纵向排列，供 PPTX 管线/打印使用 */
 html, body { width: 1920px; height: auto; overflow: visible; background: #FBFDFF; margin: 0; padding: 0; }
 .slide { width: 1920px; height: 1080px; position: relative; overflow: hidden; margin: 0 auto; font-family: var(--sans); }
 #s1.slide, #s10.slide { background: #0B2545; color: #F4F9FF; }
@@ -52,7 +102,7 @@ html, body { width: 1920px; height: auto; overflow: visible; background: #FBFDFF
 #s1 .cover-bottom .cb-r { font-size: 22px; color: var(--blue-soft); letter-spacing: .3em; font-weight: 700; }
 /* ── slide 2 ── */
 #s2 body { background: #FBFDFF; }
-#s2 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: .30; }
+#s2 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
 #s2 .page-kicker, #s2 .page-footer { color: #7B96B8; }
 #s2 .page-kicker .kicker-brand { color: var(--blue); }
 #s2 .rule-top { background: rgba(79,163,227,.35); }
@@ -84,7 +134,7 @@ html, body { width: 1920px; height: auto; overflow: visible; background: #FBFDFF
 #s2 .vd-r { right: 470px; }
 /* ── slide 3 ── */
 #s3 body { background: #FBFDFF; }
-#s3 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: .30; }
+#s3 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
 #s3 .page-kicker, #s3 .page-footer { color: #7B96B8; }
 #s3 .page-kicker .kicker-brand { color: var(--blue); }
 #s3 .rule-top { background: rgba(79,163,227,.35); }
@@ -108,7 +158,7 @@ html, body { width: 1920px; height: auto; overflow: visible; background: #FBFDFF
 #s3 .bottom-line b { color: var(--gold); font-weight: 900; }
 /* ── slide 4 ── */
 #s4 body { background: #FBFDFF; }
-#s4 .arch-bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: .34; }
+#s4 .arch-bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
 #s4 .page-kicker, #s4 .page-footer { color: #7B96B8; }
 #s4 .page-kicker .kicker-brand { color: var(--blue); }
 #s4 .rule-top { background: rgba(79,163,227,.35); }
@@ -138,7 +188,7 @@ html, body { width: 1920px; height: auto; overflow: visible; background: #FBFDFF
 #s4 .sum-sep { width: 1px; height: 22px; background: #B9D6EE; margin: 0 24px; }
 /* ── slide 5 ── */
 #s5 body { background: #FBFDFF; }
-#s5 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: .26; }
+#s5 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
 #s5 .page-kicker, #s5 .page-footer { color: #7B96B8; }
 #s5 .page-kicker .kicker-brand { color: var(--blue); }
 #s5 .rule-top { background: rgba(79,163,227,.35); }
@@ -173,7 +223,7 @@ html, body { width: 1920px; height: auto; overflow: visible; background: #FBFDFF
 #s5 .scene-band .items p { margin: 0; font-size: 22px; color: #44608A; letter-spacing: .06em; line-height: 62px; font-weight: 500; }
 /* ── slide 6 ── */
 #s6 body { background: #FBFDFF; }
-#s6 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: .26; }
+#s6 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
 #s6 .page-kicker, #s6 .page-footer { color: #7B96B8; }
 #s6 .page-kicker .kicker-brand { color: var(--blue); }
 #s6 .rule-top { background: rgba(79,163,227,.35); }
@@ -202,7 +252,7 @@ html, body { width: 1920px; height: auto; overflow: visible; background: #FBFDFF
 #s6 .evo .to span { color: var(--blue); }
 /* ── slide 7 ── */
 #s7 body { background: #FBFDFF; }
-#s7 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: .26; }
+#s7 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
 #s7 .page-kicker, #s7 .page-footer { color: #7B96B8; }
 #s7 .page-kicker .kicker-brand { color: var(--blue); }
 #s7 .rule-top { background: rgba(79,163,227,.35); }
@@ -225,7 +275,7 @@ html, body { width: 1920px; height: auto; overflow: visible; background: #FBFDFF
 #s7 .final b { color: var(--gold); font-weight: 900; }
 /* ── slide 8 ── */
 #s8 body { background: #FBFDFF; }
-#s8 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: .26; }
+#s8 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
 #s8 .page-kicker, #s8 .page-footer { color: #7B96B8; }
 #s8 .page-kicker .kicker-brand { color: var(--blue); }
 #s8 .rule-top { background: rgba(79,163,227,.35); }
@@ -249,7 +299,7 @@ html, body { width: 1920px; height: auto; overflow: visible; background: #FBFDFF
 #s8 .why b { color: var(--blue); font-weight: 900; }
 /* ── slide 9 ── */
 #s9 body { background: #FBFDFF; }
-#s9 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: .28; }
+#s9 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
 #s9 .page-kicker, #s9 .page-footer { color: #7B96B8; }
 #s9 .page-kicker .kicker-brand { color: var(--blue); }
 #s9 .rule-top { background: rgba(79,163,227,.35); }
@@ -274,11 +324,14 @@ html, body { width: 1920px; height: auto; overflow: visible; background: #FBFDFF
 #s10 .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
 #s10 .shade { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: rgba(8, 26, 50, .35); }
 #s10 .page-kicker, #s10 .page-footer { color: var(--blue-soft); }
+#s10 .page-kicker.kl { right: auto; width: 900px; justify-content: flex-start; }
+#s10 .page-kicker.kr { left: auto; width: 640px; justify-content: flex-end; }
 #s10 .page-kicker .kicker-brand { color: var(--blue); }
 #s10 .h-group { top: 168px; }
 #s10 .h-dark .h-num { color: var(--blue-soft); }
 #s10 .h-dark .h-title { color: #F7FBFF; font-size: 72px; }
 #s10 .h-dark .h-sub { color: var(--blue-soft); }
+#s10 .h-dark .h-sub { padding-left: 33px; }
 #s10 .step { position: absolute; top: 496px; width: 512px; height: 244px; background: rgba(255, 255, 255, .07); border: 1px solid rgba(143, 191, 232, .4); }
 #s10 .s1 { left: 120px; }
 #s10 .s2 { left: 704px; }
@@ -649,7 +702,8 @@ html, body { width: 1920px; height: auto; overflow: visible; background: #FBFDFF
   <div class="page-footer"><span class="f-brand">云桌面 AI AGENT 记忆增强方案</span><span>09 / 10</span></div></div>
 <div id="s10" class="slide"><img class="bg" src="../assets/finale.png" alt="">
   <div class="shade"></div>
-  <div class="page-kicker"><span class="kicker-brand">CLOUD AGENT MEMORY</span><span class="kicker-sec">NEXT STEP</span></div>
+  <div class="page-kicker kl"><span class="kicker-brand">CLOUD AGENT MEMORY</span></div>
+  <div class="page-kicker kr"><span class="kicker-sec">NEXT STEP</span></div>
 
   <div class="h-group h-dark">
     <p class="h-num">10 / ACTION</p>
