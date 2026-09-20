@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>P3 · 模糊指令的三个失败瞬间</title>
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: #FBFDFF; }
+  .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: .30; }
+  .page-kicker, .page-footer { color: #7B96B8; }
+  .page-kicker .kicker-brand { color: var(--blue); }
+  .rule-top { background: rgba(79,163,227,.35); }
+
+  .fail { position: absolute; left: 120px; right: 120px; height: 130px; background: #FFFFFF; border: 1px solid #CFE2F4; }
+  .f1 { top: 460px; } .f2 { top: 606px; } .f3 { top: 752px; }
+  .fail .f-tag { position: absolute; left: 0; top: 0; width: 210px; height: 130px; background: var(--navy); }
+  .fail .f-tag p { margin: 0; position: absolute; left: 0; right: 0; top: 38px; text-align: center; color: #fff; font-size: 25px; font-weight: 700; letter-spacing: .14em; }
+  .fail .f-tag .no { top: 16px; font-size: 16px; color: var(--gold); font-weight: 400; letter-spacing: .3em; }
+  .fail .f-say { position: absolute; left: 250px; top: 0; height: 130px; display: flex; align-items: center; width: 780px; }
+  .fail .f-say p { margin: 0; font-size: 28px; color: var(--navy); font-weight: 700; line-height: 1.45; }
+  .fail .f-say span { color: var(--blue); }
+  .fail .f-res { position: absolute; left: 1074px; right: 56px; top: 20px; }
+  .fail .f-res p { margin: 0; font-size: 20px; color: #8A5A44; line-height: 1.45; }
+  .fail .f-res .cap { font-size: 15px; color: #7B96B8; letter-spacing: .2em; margin-bottom: 6px; }
+  .fail .f-arrow { position: absolute; left: 1042px; top: 52px; width: 0; height: 0;
+    border-left: 20px solid var(--blue); border-top: 13px solid transparent; border-bottom: 13px solid transparent; }
+
+  .bottom-line { position: absolute; left: 0; right: 0; bottom: 108px; height: 78px; background: var(--navy); }
+  .bottom-line p { margin: 0; position: absolute; left: 0; right: 0; top: 22px; text-align: center; color: #F4F9FF; font-size: 26px; letter-spacing: .05em; }
+  .bottom-line b { color: var(--gold); font-weight: 900; }
+</style>
+</head>
+<body>
+  <img class="bg" src="../assets/problem-b.png" alt="">
+  <div class="page-kicker"><span class="kicker-brand">CLOUD AGENT MEMORY</span><span class="kicker-sec">典型问题 · 02</span></div>
+  <div class="rule-top"></div>
+
+  <div class="h-group">
+    <p class="h-num">03 / PROBLEM</p>
+    <h2 class="h-title">模糊指令的三个失败瞬间</h2>
+    <p class="h-sub">同样的指令，Agent 给不出你想要的答案</p>
+  </div>
+
+  <div class="fail f1">
+    <div class="f-tag"><p class="no">SCENE 01</p><p>找不到所指</p></div>
+    <div class="f-say"><p>「把<span>昨天张三发我的</span>方案改一下」</p></div>
+    <div class="f-arrow"></div>
+    <div class="f-res"><p class="cap">AGENT 的反应</p><p>「请问是哪个文件？张三是谁？」——连续反问，用户只得自己去找</p></div>
+  </div>
+  <div class="fail f2">
+    <div class="f-tag"><p class="no">SCENE 02</p><p>不懂岗位</p></div>
+    <div class="f-say"><p>「帮我写个<span>周报</span>」</p></div>
+    <div class="f-arrow"></div>
+    <div class="f-res"><p class="cap">AGENT 的反应</p><p>生成通用模板——不知道你是销售还是研发，用户仍要大改</p></div>
+  </div>
+  <div class="fail f3">
+    <div class="f-tag"><p class="no">SCENE 03</p><p>答非所问</p></div>
+    <div class="f-say"><p>「按我 <span>usual</span> 的格式整理」</p></div>
+    <div class="f-arrow"></div>
+    <div class="f-res"><p class="cap">AGENT 的反应</p><p>无法理解「usual」指什么——你的格式习惯从未被记住</p></div>
+  </div>
+
+  <div class="bottom-line">
+    <p>每一次失败都在消耗用户耐心——这是小白用户<b>放弃 Agent</b> 的首要原因</p>
+  </div>
+
+  <div class="page-footer"><span class="f-brand">云桌面 AI AGENT 记忆增强方案</span><span>03 / 10</span></div>
+</body>
+</html>
