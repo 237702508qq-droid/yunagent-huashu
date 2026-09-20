@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>P5 · 如何解决上述问题</title>
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .head { position:absolute; left:140px; right:140px; top:96px; }
+  .vtile { position:absolute; top:268px; width:800px; height:470px; padding:36px 40px; }
+  .tagrow { display:flex; align-items:baseline; }
+  .tag { font-size:14px; color:#0F62FE; letter-spacing:.12em; }
+  .tagrow .en { margin-left:auto; font-size:12px; color:#A8A8A8; letter-spacing:.24em; }
+  h3 { margin-top:16px; font-size:25px; font-weight:900; color:#161616; letter-spacing:.01em; }
+  .body { margin-top:18px; font-size:17px; line-height:1.8; color:#525252; max-width:660px; }
+  .body b { color:#161616; font-weight:700; }
+  .viz { margin-top:30px; }
+  .cap { margin-top:16px; font-size:13px; color:#525252; letter-spacing:.12em; }
+
+  /* 抽卡 → 直出 */
+  .flow { display:flex; align-items:center; gap:18px; }
+  .cards { display:flex; gap:10px; }
+  .card { width:60px; height:80px; border:1px solid #C6C6C6; display:flex; align-items:center; justify-content:center;
+          font-family:'Noto Sans Mono',monospace; font-size:18px; color:#A8A8A8; background:#FFFFFF; }
+  .result { width:64px; height:84px; border:2px solid #0F62FE; background:#EDF5FF; color:#0F62FE;
+            display:flex; align-items:center; justify-content:center; font-family:'Noto Sans Mono',monospace; font-size:20px; }
+  .farrow { font-family:'Noto Sans Mono',monospace; font-size:15px; color:#0F62FE; letter-spacing:.1em; }
+  .farrow .l { font-size:11px; color:#525252; letter-spacing:.14em; margin-top:6px; }
+
+  /* 两世界合流 */
+  .merge { display:flex; align-items:center; gap:16px; }
+  .world { width:250px; border:2px solid #161616; background:#FFFFFF; padding:16px 18px 20px; }
+  .world .wl { font-size:13px; letter-spacing:.14em; color:#161616; }
+  .world .lines { margin-top:12px; display:flex; flex-direction:column; gap:9px; }
+  .world .ln { height:7px; background:#E0E0E0; }
+  .world .ln.s { width:70%; }
+  .mem { border:2px solid #0F62FE; background:#EDF5FF; padding:16px 22px; }
+  .mem .ml { font-size:15px; font-weight:900; color:#002D9C; letter-spacing:.06em; }
+  .mem .ms { font-size:11px; color:#0F62FE; letter-spacing:.1em; margin-top:6px; }
+  .op { font-family:'Noto Sans Mono',monospace; font-size:24px; color:#0F62FE; }
+
+  /* 案例回访带 */
+  .recap { position:absolute; left:140px; right:140px; top:778px; display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .rc { background:#FFFFFF; padding:24px 28px; display:flex; flex-direction:column; gap:12px; }
+  .rc .rh { display:flex; align-items:center; gap:12px; font-size:13px; letter-spacing:.12em; color:#525252; }
+  .rc .rh .sq { width:10px; height:10px; background:#0F62FE; flex:none; }
+  .rc .rt { font-size:15.5px; line-height:1.7; color:#161616; }
+  .rc .rt .arr { color:#0F62FE; font-weight:900; }
+  .rc .rt b { color:#0F62FE; font-weight:700; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="kick"><span class="sq"></span>价值 · 对应解决<span class="en mono">HOW IT HELPS</span></div>
+    <h2 class="h2">两个问题，两个<span class="acc">对应解法</span></h2>
+  </div>
+
+  <!-- 收益 01 -->
+  <div class="tile vtile" style="left:140px;">
+    <div class="tagrow"><span class="tag mono">对应问题 01</span><span class="en mono">OUTCOME-A</span></div>
+    <h3>Agent 回答成功率提升</h3>
+    <p class="body">桌面里的<b>所有 Agent</b> 都了解当前用户是谁，知道他的<b>工作边界</b>和<b>写作偏好</b>，大幅提升 Agent 的成功率——不再「抽卡」。</p>
+    <div class="viz">
+      <div class="flow">
+        <div class="cards">
+          <div class="card">?</div><div class="card">?</div><div class="card">?</div>
+        </div>
+        <div class="farrow">──▶<div class="l">启用桌面记忆</div></div>
+        <div class="result">✓</div>
+      </div>
+      <div class="cap mono">「抽卡」→ 一次到位</div>
+    </div>
+  </div>
+
+  <!-- 收益 02 -->
+  <div class="tile vtile" style="left:980px;">
+    <div class="tagrow"><span class="tag mono">对应问题 02</span><span class="en mono">OUTCOME-B</span></div>
+    <h3>模糊指令也可达成目标</h3>
+    <p class="body">Agent 具备<b>和你一样的桌面记忆</b>，可以通过模糊指令达成任务。</p>
+    <div class="viz">
+      <div class="merge">
+        <div class="world">
+          <div class="wl mono">对话框</div>
+          <div class="lines"><span class="ln" style="width:82%"></span><span class="ln s"></span></div>
+        </div>
+        <span class="op">+</span>
+        <div class="world">
+          <div class="wl mono">桌面</div>
+          <div class="lines"><span class="ln" style="width:70%"></span><span class="ln s"></span></div>
+        </div>
+        <span class="op">──▶</span>
+        <div class="mem">
+          <div class="ml">桌面记忆</div>
+          <div class="ms mono">上下文不再局限于对话框</div>
+        </div>
+      </div>
+      <div class="cap mono">两个记忆世界 · 合而为一</div>
+    </div>
+  </div>
+
+  <!-- 案例回访 -->
+  <div class="recap">
+    <div class="rc">
+      <div class="rh"><span class="sq"></span>案例回访 · 问题 01 的 VDI 需求文档</div>
+      <p class="rt">改造后，同一份指令 <span class="arr">→</span> Agent 知道你的<b>岗位</b>与<b>文档格式偏好</b>。</p>
+    </div>
+    <div class="rc">
+      <div class="rh"><span class="sq"></span>案例回访 · 问题 02 的张三 PPT</div>
+      <p class="rt">张三的 PPT <span class="arr">→</span> 从<b>桌面记忆</b>直接定位，模糊指令照常执行。</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>桌面记忆 · 客户价值方案</span>
+    <span class="mono">05 / 07</span>
+  </div>
+</body>
+</html>

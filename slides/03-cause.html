@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>P3 · 问题原因分析</title>
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .head { position:absolute; left:140px; right:140px; top:96px; }
+  .ctile { position:absolute; top:268px; width:800px; height:560px; padding:36px 40px; }
+  .tagrow { display:flex; align-items:baseline; }
+  .tag { font-size:14px; color:#0F62FE; letter-spacing:.12em; }
+  .tagrow .en { margin-left:auto; font-size:12px; color:#A8A8A8; letter-spacing:.24em; }
+  h3 { margin-top:16px; font-size:25px; font-weight:900; color:#161616; letter-spacing:.01em; }
+  .body { margin-top:18px; font-size:17px; line-height:1.8; color:#525252; max-width:660px; }
+  .body b { color:#161616; font-weight:700; }
+  .viz { margin-top:34px; }
+  .cap { margin-top:16px; font-size:13px; color:#525252; letter-spacing:.12em; }
+
+  /* 抽卡 */
+  .cards { display:flex; gap:14px; }
+  .card { width:72px; height:96px; border:1px solid #C6C6C6; display:flex; align-items:center; justify-content:center;
+          font-family:'Noto Sans Mono',monospace; font-size:22px; color:#A8A8A8; background:#FFFFFF; }
+  .card.hit { background:#0F62FE; border-color:#0F62FE; color:#FFFFFF; }
+
+  /* 对话框 vs 桌面 */
+  .split { display:flex; align-items:center; gap:22px; }
+  .world { width:300px; border:2px solid #161616; background:#FFFFFF; padding:18px 20px 22px; }
+  .world .wl { font-size:13px; letter-spacing:.14em; color:#161616; }
+  .world .lines { margin-top:14px; display:flex; flex-direction:column; gap:10px; }
+  .world .ln { height:8px; background:#E0E0E0; }
+  .world .ln.s { width:70%; }
+  .scatter { position:relative; width:300px; height:96px; }
+  .dot { position:absolute; border-radius:50%; }
+
+  /* 底部对照带 */
+  .band { position:absolute; left:140px; right:140px; top:868px; height:72px; background:#FFFFFF;
+          display:flex; align-items:center; gap:18px; padding:0 32px; }
+  .band .sq { width:12px; height:12px; background:#0F62FE; flex:none; }
+  .band .bt { font-size:20px; font-weight:900; color:#161616; }
+  .band .bd { font-size:15px; color:#525252; margin-left:8px; }
+  .band .en { margin-left:auto; font-size:12px; color:#A8A8A8; letter-spacing:.24em; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="kick"><span class="sq"></span>问题原因 · 分析<span class="en mono">ROOT CAUSE</span></div>
+    <h2 class="h2">不是模型能力问题，是<span class="acc">它不认识你</span></h2>
+  </div>
+
+  <!-- 原因 01 -->
+  <div class="tile ctile" style="left:140px;">
+    <div class="tagrow"><span class="tag mono">关于问题 01</span><span class="en mono">CAUSE-A</span></div>
+    <h3>不了解这个用户，只能「抽卡」</h3>
+    <p class="body">Agent 不了解当前这个用户——<b>不了解你是谁、工作边界是什么、偏好是什么</b>，它就只能通过「抽卡」来猜你要什么。</p>
+    <div class="viz">
+      <div class="cards">
+        <div class="card">?</div>
+        <div class="card">?</div>
+        <div class="card hit">✓</div>
+        <div class="card">?</div>
+        <div class="card">?</div>
+      </div>
+      <div class="cap mono">每次输出 = 重新抽卡 · 质量不可预期</div>
+    </div>
+  </div>
+
+  <!-- 原因 02 -->
+  <div class="tile ctile" style="left:980px;">
+    <div class="tagrow"><span class="tag mono">关于问题 02</span><span class="en mono">CAUSE-B</span></div>
+    <h3>只记得对话框，忘了整个桌面</h3>
+    <p class="body">你在<b>对话框</b>中和它说过的内容它记得；但你在<b>桌面里面</b>做的事情，它都不了解。</p>
+    <div class="viz">
+      <div class="split">
+        <div class="world">
+          <div class="wl mono">对话框</div>
+          <div class="lines"><span class="ln" style="width:85%"></span><span class="ln s"></span><span class="ln" style="width:60%"></span></div>
+        </div>
+        <span class="mono" style="font-size:26px; color:#0F62FE;">×</span>
+        <div class="world">
+          <div class="wl mono">桌面</div>
+          <div class="scatter">
+            <span class="dot" style="left:14px;  top:22px; width:10px; height:10px; background:#0F62FE;"></span>
+            <span class="dot" style="left:64px;  top:52px; width:7px;  height:7px;  background:#C6C6C6;"></span>
+            <span class="dot" style="left:118px; top:16px; width:12px; height:12px; background:#A8A8A8;"></span>
+            <span class="dot" style="left:168px; top:58px; width:8px;  height:8px;  background:#0F62FE;"></span>
+            <span class="dot" style="left:222px; top:26px; width:9px;  height:9px;  background:#C6C6C6;"></span>
+            <span class="dot" style="left:262px; top:56px; width:7px;  height:7px;  background:#A8A8A8;"></span>
+          </div>
+        </div>
+      </div>
+      <div class="cap mono">两个记忆世界 · 互不相通</div>
+    </div>
+  </div>
+
+  <!-- 关键对照 -->
+  <div class="band">
+    <span class="sq"></span>
+    <span class="bt">企业上下文 ≠ 个人上下文</span>
+    <span class="bd">企业级知识已有成熟方案；个人的偏好、工作边界与常用词，仍是空白。</span>
+    <span class="en mono">THE GAP</span>
+  </div>
+</body>
+</html>

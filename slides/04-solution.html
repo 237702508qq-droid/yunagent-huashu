@@ -2,106 +2,78 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>P4 · 我们的解决方案</title>
+<title>P4 · 解决方案（三步）</title>
 <link rel="stylesheet" href="../shared/tokens.css">
 <style>
-  body { background: #FBFDFF; }
-  .arch-bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
-  .page-kicker, .page-footer { color: #7B96B8; }
-  .page-kicker .kicker-brand { color: var(--blue); }
-  .rule-top { background: rgba(79,163,227,.35); }
-
-  .arch-wrap { position: absolute; left: 120px; right: 120px; top: 466px; }
-  .arch-row { position: relative; height: 150px; margin-bottom: 12px; }
-  .arch-card {
-    position: absolute; left: 0; top: 0; width: 1128px; height: 144px;
-    background: #FFFFFF; border: 2px solid #B9D6EE;
-  }
-  .arch-card .ac-tag {
-    position: absolute; left: 0; top: 0; width: 176px; height: 144px; background: var(--navy);
-  }
-  .arch-card .ac-tag p {
-    margin: 0; position: absolute; left: 0; right: 0; top: 56px;
-    text-align: center; color: #FFFFFF; font-size: 30px; font-weight: 700; letter-spacing: .22em; margin: 0;
-  }
-  .arch-card .ac-tag p { margin: 0; }
-  .arch-card .ac-tag .ac-cn {
-    top: 36px;
-  }
-  .arch-card .ac-tag .en {
-    top: 86px; font-size: 15px; letter-spacing: .18em; color: var(--blue-soft); font-weight: 400;
-  }
-  .arch-card .ac-body { position: absolute; left: 214px; top: 0; width: 880px; height: 144px; }
-  .arch-card .ac-body h3 {
-    margin: 20px 0 0 0; font-size: 29px; color: var(--navy); font-weight: 900; letter-spacing: .04em;
-  }
-  .arch-card .ac-body p { margin: 10px 0 0 0; font-size: 22px; color: #44608A; line-height: 1.5; letter-spacing: .01em; }
-  .arch-card.l2 { left: 96px; }
-  .arch-card.l3 { left: 192px; }
-  .arch-arrow { position: absolute; right: 118px; top: 55px; width: 0; height: 0;
-    border-left: 26px solid var(--blue); border-top: 17px solid transparent; border-bottom: 17px solid transparent; }
-  .arch-stem { position: absolute; right: 140px; top: 70px; width: 0; height: 0; }
-
-  .sum-title { position: absolute; left: 120px; top: 952px; font-size: 24px; font-weight: 700; color: var(--blue); letter-spacing: .2em; }
-  .sum-row { position: absolute; left: 320px; right: 120px; top: 950px; display: flex; }
-  .sum-item { display: flex; align-items: baseline; }
-  .sum-item .no { font-size: 22px; font-weight: 900; color: var(--gold); margin-right: 10px; }
-  .sum-item p { margin: 0; font-size: 22px; color: #44608A; letter-spacing: .02em; }
-  .sum-sep { width: 1px; height: 22px; background: #B9D6EE; margin: 0 24px; }
+  .head { position:absolute; left:140px; right:140px; top:96px; }
+  .arch { position:absolute; left:140px; top:268px; width:640px; height:620px; background:#FFFFFF; padding:46px 48px; }
+  .band { height:124px; display:flex; align-items:center; justify-content:space-between; padding:0 28px; }
+  .band .nm { font-size:22px; font-weight:900; letter-spacing:.02em; }
+  .band .tg { font-size:13px; letter-spacing:.08em; }
+  .b1 { border:2px solid #161616; background:#FFFFFF; }
+  .b1 .nm { color:#161616; } .b1 .tg { color:#525252; }
+  .b2 { border:2px solid #0F62FE; background:#EDF5FF; }
+  .b2 .nm { color:#002D9C; } .b2 .tg { color:#0F62FE; }
+  .b3 { background:#002D9C; }
+  .b3 .nm { color:#FFFFFF; } .b3 .tg { color:rgba(255,255,255,.78); }
+  .ajump { height:58px; display:flex; align-items:center; justify-content:center; gap:12px; }
+  .ajump span { font-size:13px; color:#0F62FE; letter-spacing:.12em; }
+  .steps { position:absolute; left:902px; top:268px; width:878px; }
+  .step { display:grid; grid-template-columns:96px 1fr; padding:38px 0 34px; border-top:1px solid #C6C6C6; }
+  .step:last-child { border-bottom:1px solid #C6C6C6; }
+  .step .no { font-size:40px; color:#0F62FE; line-height:1; }
+  .step h3 { font-size:28px; font-weight:900; color:#161616; margin-bottom:14px; letter-spacing:.02em; }
+  .step p { font-size:17px; line-height:1.8; color:#525252; max-width:700px; }
+  .step p b { color:#161616; font-weight:700; }
 </style>
 </head>
 <body>
-  <img class="arch-bg" src="../assets/architecture.png" alt="">
-  <div class="page-kicker"><span class="kicker-brand">CLOUD AGENT MEMORY</span><span class="kicker-sec">解决方案 · 01</span></div>
-  <div class="rule-top"></div>
-
-  <div class="h-group">
-    <p class="h-num">04 / SOLUTION</p>
-    <h2 class="h-title">我们的解决方案：给 Agent 装上「桌面情景记忆」</h2>
-    <p class="h-sub">在 VDI 桌面内启用桌面记忆 · 操作信息以数据库形式滚动记录 · 三层协同</p>
+  <div class="head">
+    <div class="kick"><span class="sq"></span>解决方案 · 三步<span class="en mono">SOLUTION</span></div>
+    <h2 class="h2">在 VDI 桌面中，启用<span class="acc">桌面记忆</span></h2>
   </div>
 
-  <div class="arch-wrap">
-    <div class="arch-row">
-      <div class="arch-card l3">
-        <div class="ac-tag"><p class="ac-cn">增强层</p><p class="en">AUGMENT</p></div>
-        <div class="ac-body">
-          <h3>Agent 调用记忆，模糊指令自动补全「5W」</h3>
-          <p>谁、何时、什么文件、什么格式、什么目标——指令缺失的语境由记忆补齐</p>
-        </div>
-        <div class="arch-arrow"></div>
+  <div class="arch">
+    <div class="band b1"><span class="nm">桌面记录</span><span class="tg mono">采集 · 记录</span></div>
+    <div class="ajump">
+      <svg width="16" height="34" viewBox="0 0 16 34" fill="none"><path d="M8 0 V22 M2 17 L8 26 L14 17" stroke="#0F62FE" stroke-width="2.5"/></svg>
+      <span class="mono">数据</span>
+    </div>
+    <div class="band b2"><span class="nm">形成记忆</span><span class="tg mono">Agent 可调用</span></div>
+    <div class="ajump">
+      <svg width="16" height="34" viewBox="0 0 16 34" fill="none"><path d="M8 0 V22 M2 17 L8 26 L14 17" stroke="#0F62FE" stroke-width="2.5"/></svg>
+      <span class="mono">整理</span>
+    </div>
+    <div class="band b3"><span class="nm">形成个人上下文</span><span class="tg mono">提升成功率</span></div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="no mono">01</div>
+      <div>
+        <h3>桌面记录</h3>
+        <p>在 VDI 桌面中启用<b>桌面记忆</b>，即可采集用户在桌面中的操作信息，并记录下来。</p>
       </div>
     </div>
-    <div class="arch-row">
-      <div class="arch-card l2">
-        <div class="ac-tag"><p class="ac-cn">记忆层</p><p class="en">MEMORY</p></div>
-        <div class="ac-body">
-          <h3>本地构建「工作上下文」</h3>
-          <p>文件往来 · 沟通对象 · 文档习惯 · 应用使用图谱；一方面供 Agent 直接调用形成桌面记忆，另一方面由模型整理为「个人上下文」</p>
-        </div>
-        <div class="arch-arrow"></div>
+    <div class="step">
+      <div class="no mono">02</div>
+      <div>
+        <h3>形成记忆</h3>
+        <p>这些数据一方面可以被用户的 Agent 调用，让 Agent 具备了桌面中的<b>「记忆」</b>。</p>
       </div>
     </div>
-    <div class="arch-row">
-      <div class="arch-card l1">
-        <div class="ac-tag"><p class="ac-cn">采集层</p><p class="en">COLLECT</p></div>
-        <div class="ac-body">
-          <h3>VDI 桌面内启用桌面记忆，滚动记录操作信息</h3>
-          <p>不录屏、不截全屏，敏感内容哈希脱敏——安静采集，用户无感</p>
-        </div>
+    <div class="step">
+      <div class="no mono">03</div>
+      <div>
+        <h3>形成个人上下文</h3>
+        <p>另一方面可以借助模型的能力将其整理为<b>用户上下文</b>，提升 Agent 成功率（如：当前用户的岗位、工作边界、写作偏好等）。</p>
       </div>
     </div>
   </div>
 
-  <p class="sum-title">三句话读懂</p>
-  <div class="sum-row">
-    <div class="sum-item"><span class="no">01</span><p>用户照常用云桌面，记忆层安静记录工作轨迹</p></div>
-    <div class="sum-sep"></div>
-    <div class="sum-item"><span class="no">02</span><p>模糊指令进来，记忆层自动补全缺失语境</p></div>
-    <div class="sum-sep"></div>
-    <div class="sum-item"><span class="no">03</span><p>Agent 输出贴合岗位与习惯的结果</p></div>
+  <div class="footer">
+    <span>桌面记忆 · 客户价值方案</span>
+    <span class="mono">04 / 07</span>
   </div>
-
-  <div class="page-footer"><span class="f-brand">云桌面 AI AGENT 记忆增强方案</span><span>04 / 10</span></div>
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>P6 · 更多自定义功能</title>
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .head { position:absolute; left:140px; right:140px; top:96px; }
+  .lt { position:absolute; left:140px; top:268px; width:800px; height:620px; padding:40px 44px; }
+  .tag { font-size:14px; color:#0F62FE; letter-spacing:.12em; }
+  h3 { margin-top:18px; font-size:27px; font-weight:900; color:#161616; line-height:1.5; letter-spacing:.01em; }
+  .body { margin-top:22px; font-size:17px; line-height:1.85; color:#525252; max-width:640px; }
+  .body b { color:#161616; font-weight:700; }
+  .paths { margin-top:34px; border-top:1px solid #C6C6C6; }
+  .path { display:grid; grid-template-columns:170px 1fr; padding:24px 0; border-bottom:1px solid #C6C6C6; }
+  .path .who { font-size:14px; color:#0F62FE; letter-spacing:.08em; padding-top:2px; white-space:nowrap; }
+  .path .what { font-size:16px; color:#161616; line-height:1.6; }
+  .path .what .d { display:block; margin-top:6px; font-size:13px; color:#525252; letter-spacing:.1em; }
+
+  .rt { position:absolute; left:980px; top:268px; width:800px; height:620px; padding:40px 44px; }
+  .rt .glabel { font-size:14px; color:#525252; letter-spacing:.14em; }
+  .exs { margin-top:20px; display:flex; flex-direction:column; gap:16px; }
+  .ex { border:1px solid #C6C6C6; background:#FFFFFF; padding:24px 28px; display:flex; align-items:center; gap:22px; }
+  .ex .no { font-size:26px; color:#0F62FE; line-height:1; }
+  .ex .tx { font-size:18px; font-weight:700; color:#161616; }
+  .ex .sd { display:block; margin-top:7px; font-size:13.5px; font-weight:400; color:#525252; }
+  .etc { margin-top:20px; font-size:14px; color:#525252; letter-spacing:.06em; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="kick"><span class="sq"></span>扩展 · 自定义<span class="en mono">CUSTOMIZE</span></div>
+    <h2 class="h2">桌面记忆支持<span class="acc">二次开发</span></h2>
+  </div>
+
+  <div class="tile lt">
+    <span class="tag mono">能力说明</span>
+    <h3>支持用户对桌面记忆二次开发<br>（使用自然语言即可）</h3>
+    <p class="body">个人上下文不只是被动的记忆——用户可以用<b>自然语言</b>对它做二次开发，定义自己想要的能力；也可以由管理员统一<b>下发应用方式</b>，在组织内规模化落地。</p>
+    <div class="paths">
+      <div class="path">
+        <span class="who mono">路径 A · 用户</span>
+        <span class="what">自然语言即可开发<span class="d" style="font-size:13px; color:#525252; letter-spacing:.1em; display:block; margin-top:6px;">NATURAL LANGUAGE</span></span>
+      </div>
+      <div class="path">
+        <span class="who mono">路径 B · 管理员</span>
+        <span class="what">统一下发应用方式<d style="font-size:13px; color:#525252; letter-spacing:.1em; display:block; margin-top:6px;">ADMIN DISTRIBUTED</d></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tile rt">
+    <div class="glabel">可以做什么 · 举例</div>
+    <div class="exs">
+      <div class="ex">
+        <span class="no mono">EX-01</span>
+        <span class="tx">识别 AI 提效点<span class="sd">识别工作过程中可以通过 AI 提效的点</span></span>
+      </div>
+      <div class="ex">
+        <span class="no mono">EX-02</span>
+        <span class="tx">生成日报 · 周报<span class="sd">按你的格式偏好，自动生成日报、周报</span></span>
+      </div>
+      <div class="ex">
+        <span class="no mono">EX-03</span>
+        <span class="tx">生成待办事项<span class="sd">从桌面工作里整理出待办事项</span></span>
+      </div>
+    </div>
+    <p class="etc mono">…… 等等，更多能力由用户自定义</p>
+  </div>
+
+  <div class="footer">
+    <span>桌面记忆 · 客户价值方案</span>
+    <span class="mono">06 / 07</span>
+  </div>
+</body>
+</html>

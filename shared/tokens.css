@@ -1,61 +1,28 @@
-/* 云桌面 AI Agent 记忆增强方案 · 共享设计 token（商务深蓝）
-   约定：色板/字号/页眉页脚 chrome 全局唯一来源；每页 <style> 只放本页布局。
-   字体全部使用本机 Noto CJK（衬线标题 / 黑体正文），无 webfont 依赖。
-   渐变、发光类视觉全部由 PIL 配图承担（转换器不捕获 CSS 渐变）。 */
-
-:root {
-  --navy: #0B2545;          /* 主深蓝 */
-  --navy-deep: #081A32;     /* 更深底 */
-  --ink: #12263F;           /* 白底页正文深色 */
-  --blue: #4FA3E3;          /* 亮蓝 accent */
-  --blue-soft: #8FBFE8;     /* 浅蓝 */
-  --blue-pale: #DCEAF7;     /* 极浅蓝（白底页色块底） */
-  --blue-mist: #F2F7FC;     /* 浅雾蓝卡片底 */
-  --gold: #D9A441;          /* 商务金点缀 */
-  --serif: "Noto Serif CJK SC", serif;
-  --sans: "Noto Sans CJK SC", sans-serif;
-}
-
-/* 画布锁定 */
-html, body { margin: 0; padding: 0; }
+/* ─── IBM Carbon 方向 · 共享设计 token（云桌面 AI Agent「桌面记忆」方案） ─── */
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { background:#F4F4F4; }
 body {
-  width: 1920px; height: 1080px;
-  font-family: var(--sans);
-  position: relative; overflow: hidden;
-  -webkit-font-smoothing: antialiased;
+  width:1920px; height:1080px; overflow:hidden; position:relative;
+  font-family:'Noto Sans CJK SC', sans-serif; color:#161616;
+  -webkit-font-smoothing:antialiased;
 }
+.mono { font-family:'Noto Sans Mono','Noto Sans CJK SC',monospace; font-variant-numeric:tabular-nums; }
 
-/* ── 每页通用 chrome ─────────────────────────────────────── */
-.page-kicker {
-  position: absolute; top: 64px; left: 120px; right: 120px;
-  display: flex; align-items: baseline; justify-content: space-between;
-  font-size: 22px; letter-spacing: .35em; color: var(--blue-soft);
-}
-.page-kicker .kicker-brand { font-weight: 700; color: var(--blue); letter-spacing: .30em; }
-.page-kicker .kicker-sec { font-weight: 500; }
+/* 结构装饰：十字定位标 */
+.plus { position:absolute; font-family:'Noto Sans Mono',monospace; font-size:22px; color:#C6C6C6; line-height:1; }
 
-.rule-top { position: absolute; top: 116px; left: 120px; right: 120px; height: 2px; background: rgba(79,163,227,.45); }
+/* 页眉 kick（蓝方块 + 章节标签 + 英文装饰） */
+.kick { display:flex; align-items:center; gap:14px; font-size:15px; letter-spacing:.18em; color:#161616; }
+.kick .sq { width:12px; height:12px; background:#0F62FE; flex:none; }
+.kick .en { margin-left:auto; color:#A8A8A8; font-size:13px; letter-spacing:.3em; }
 
-.page-footer {
-  position: absolute; bottom: 44px; left: 120px; right: 120px;
-  display: flex; align-items: center; justify-content: space-between;
-  font-size: 20px; color: var(--blue-soft); letter-spacing: .12em;
-}
-.page-footer .f-brand { font-weight: 700; letter-spacing: .30em; }
+/* 页标题 */
+.h2 { margin-top:26px; font-weight:900; font-size:54px; letter-spacing:.01em; color:#161616; }
+.h2 .acc { color:#0F62FE; }
 
-/* 内容页标题组（白底页） */
-.h-group { position: absolute; top: 150px; left: 120px; right: 120px; }
-.h-num {
-  font-family: var(--sans); font-weight: 900; font-size: 30px; color: var(--blue);
-  letter-spacing: .18em;
-}
-.h-title {
-  font-family: var(--serif); font-weight: 900; font-size: 66px; color: var(--navy);
-  margin-top: 10px; letter-spacing: .02em; line-height: 1.22;
-}
-.h-sub { font-size: 26px; color: #4A6285; margin-top: 0; padding-top: 12px; letter-spacing: .06em; }
+/* 页脚 */
+.footer { position:absolute; left:140px; right:140px; bottom:52px; display:flex;
+  justify-content:space-between; font-size:15px; color:#525252; letter-spacing:.08em; }
 
-/* 深色页标题组（封面/结尾） */
-.h-dark .h-num { color: var(--blue-soft); }
-.h-dark .h-title { color: #F4F9FF; }
-.h-dark .h-sub { color: var(--blue-soft); }
+/* 白瓦片 */
+.tile { background:#FFFFFF; }
