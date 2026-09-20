@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>P9 · 数据安全与隐私</title>
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: #FBFDFF; }
+  .bg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: .28; }
+  .page-kicker, .page-footer { color: #7B96B8; }
+  .page-kicker .kicker-brand { color: var(--blue); }
+  .rule-top { background: rgba(79,163,227,.35); }
+
+  .line { position: absolute; width: 804px; height: 216px; background: #FFFFFF; border: 1px solid #CFE2F4; }
+  .d1 { left: 120px; top: 452px; } .d2 { left: 996px; top: 452px; }
+  .d3 { left: 120px; top: 688px; } .d4 { left: 996px; top: 688px; }
+  .line .l-no { position: absolute; left: 0; top: 0; width: 92px; height: 216px; background: var(--navy); }
+  .line .l-no p { margin: 0; position: absolute; left: 0; right: 0; top: 62px; text-align: center; font-size: 34px; font-weight: 900; color: var(--gold); }
+  .line .l-no .en { top: 112px; font-size: 11px; color: var(--blue-soft); font-weight: 400; letter-spacing: .06em; }
+  .line .l-nm { position: absolute; left: 128px; top: 36px; font-size: 31px; font-weight: 900; color: var(--navy); letter-spacing: .1em; }
+  .line .l-tx { position: absolute; left: 128px; right: 40px; top: 96px; }
+  .line .l-tx p { margin: 0; font-size: 22px; color: #44608A; line-height: 1.62; }
+  .line .l-tx b { color: var(--navy); font-weight: 700; }
+  .line .l-tick { position: absolute; right: 40px; top: 46px; width: 30px; height: 4px; background: var(--blue-pale); }
+
+  .comp { position: absolute; left: 0; right: 0; bottom: 108px; height: 78px; background: var(--navy); }
+  .comp p { margin: 0; position: absolute; left: 0; right: 0; top: 22px; text-align: center; color: #F4F9FF; font-size: 26px; letter-spacing: .05em; }
+  .comp b { color: var(--gold); font-weight: 900; }
+</style>
+</head>
+<body>
+  <img class="bg" src="../assets/shield.png" alt="">
+  <div class="page-kicker"><span class="kicker-brand">CLOUD AGENT MEMORY</span><span class="kicker-sec">安全与合规 · 01</span></div>
+  <div class="rule-top"></div>
+
+  <div class="h-group">
+    <p class="h-num">09 / SECURITY</p>
+    <h2 class="h-title">数据安全与隐私，一页说清</h2>
+    <p class="h-sub">四道防线：让记忆能力与企业数据管理要求并行不悖</p>
+  </div>
+
+  <div class="line d1">
+    <div class="l-no"><p>01</p><p class="en">LOCAL</p></div><div class="l-tick"></div>
+    <p class="l-nm">本地闭环</p>
+    <div class="l-tx"><p>记忆数据只在<b>云桌面内</b>处理与存储，不外传、不上公网。</p></div>
+  </div>
+  <div class="line d2">
+    <div class="l-no"><p>02</p><p class="en">SOVEREIGN</p></div><div class="l-tick"></div>
+    <p class="l-nm">企业主权</p>
+    <div class="l-tx"><p>管理员可控——记忆开关、保留时长、<b>敏感应用排除名单</b>。</p></div>
+  </div>
+  <div class="line d3">
+    <div class="l-no"><p>03</p><p class="en">TRANSPARENT</p></div><div class="l-tick"></div>
+    <p class="l-nm">用户知情</p>
+    <div class="l-tx"><p>透明的记忆可视化管理，员工可<b>查看 / 删除</b>自己的记忆。</p></div>
+  </div>
+  <div class="line d4">
+    <div class="l-no"><p>04</p><p class="en">MASKED</p></div><div class="l-tick"></div>
+    <p class="l-nm">脱敏处理</p>
+    <div class="l-tx"><p>密码框、支付页等敏感界面<b>自动排除</b>采集，敏感内容哈希脱敏。</p></div>
+  </div>
+
+  <div class="comp">
+    <p>合规口径：符合企业数据管理要求，<b>采集范围与保留策略由企业制定</b></p>
+  </div>
+
+  <div class="page-footer"><span class="f-brand">云桌面 AI AGENT 记忆增强方案</span><span>09 / 10</span></div>
+</body>
+</html>
