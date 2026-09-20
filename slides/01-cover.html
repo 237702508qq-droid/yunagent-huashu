@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>P1 · 封面</title>
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--navy); color: #F4F9FF; }
+  .cover-bg { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+  .cover-shade { position: absolute; left: 0; top: 0; width: 1280px; height: 1080px; background: rgba(8, 26, 50, .55); }
+  .cover-frame { position: absolute; left: 100px; top: 84px; width: 1720px; height: 912px; border: 1px solid rgba(143,191,232,.35); }
+  .cover-corner { position: absolute; width: 56px; height: 56px; background: transparent; border: 0 solid var(--gold); }
+  .corner-tl { left: 100px; top: 84px; border-left-width: 3px; border-top-width: 3px; }
+  .corner-br { left: 1764px; top: 940px; border-right-width: 3px; border-bottom-width: 3px; }
+
+  .cover-org { position: absolute; left: 150px; top: 132px; display: flex; align-items: center; }
+  .org-tick { width: 14px; height: 14px; background: var(--gold); }
+  .cover-org p { margin: 0 0 0 16px; font-size: 23px; letter-spacing: .32em; color: var(--blue-soft); font-weight: 500; }
+
+  .cover-main { position: absolute; left: 150px; top: 310px; width: 1560px; }
+  .cover-tag {
+    display: inline-block; padding: 0; font-size: 24px; letter-spacing: .5em;
+    color: var(--blue); font-weight: 700;
+  }
+  .cover-title {
+    margin: 26px 0 0 0; font-family: var(--serif); font-weight: 900;
+    font-size: 88px; line-height: 1.26; color: #F7FBFF; letter-spacing: .01em; white-space: nowrap;
+  }
+  .cover-title .em-gold { color: var(--gold); }
+  .cover-sub { margin: 34px 0 0 0; font-size: 34px; color: var(--blue-soft); letter-spacing: .1em; font-weight: 500; }
+  .cover-rule { width: 148px; height: 4px; background: var(--gold); margin-top: 46px; }
+
+  .cover-points { position: absolute; left: 150px; top: 812px; display: flex; }
+  .pt { display: flex; align-items: center; }
+  .pt-dot { width: 10px; height: 10px; border-radius: 5px; background: var(--blue); margin-right: 12px; }
+  .pt p { margin: 0; font-size: 24px; color: #C9DDF2; letter-spacing: .08em; }
+  .pt-sep { width: 1px; height: 26px; background: rgba(143,191,232,.5); margin: 0 30px; }
+
+  .cover-bottom {
+    position: absolute; left: 150px; right: 150px; bottom: 104px;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .cover-bottom .cb-l { font-size: 22px; color: var(--blue-soft); letter-spacing: .2em; }
+  .cover-bottom .cb-r { font-size: 22px; color: var(--blue-soft); letter-spacing: .3em; font-weight: 700; }
+</style>
+</head>
+<body>
+  <img class="cover-bg" src="../assets/cover.png" alt="">
+  <div class="cover-shade"></div>
+  <div class="cover-frame"></div>
+  <div class="cover-corner corner-tl"></div>
+  <div class="cover-corner corner-br"></div>
+
+  <div class="cover-org">
+    <div class="org-tick"></div>
+    <p>企业级云桌面解决方案</p>
+  </div>
+
+  <div class="cover-main">
+    <p class="cover-tag">CLOUD DESKTOP · AGENT MEMORY</p>
+    <h1 class="cover-title">让云桌面里的 AI Agent<br>真正<span class="em-gold">懂你</span></h1>
+    <p class="cover-sub">基于 VDI 桌面记忆的 Agent 增强方案</p>
+    <div class="cover-rule"></div>
+  </div>
+
+  <div class="cover-points">
+    <div class="pt"><div class="pt-dot"></div><p>从「听懂指令」到「理解工作」</p></div>
+    <div class="pt-sep"></div>
+    <div class="pt"><div class="pt-dot"></div><p>无需改变用户习惯</p></div>
+    <div class="pt-sep"></div>
+    <div class="pt"><div class="pt-dot"></div><p>数据不出云桌面</p></div>
+  </div>
+
+  <div class="cover-bottom">
+    <p class="cb-l">面向企业级云桌面环境</p>
+    <p class="cb-r">2026</p>
+  </div>
+</body>
+</html>
